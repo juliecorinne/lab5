@@ -13,34 +13,46 @@ public class Main {
         int rollNum = 1;
 
         System.out.println("Welcome to the Grand Circus Casino!");
-        System.out.println();
+        blankLine();
 
         do {
 
             System.out.println("How many sides should each die have?");
             n = scan.nextInt();
+            blankLine();
 
             die1 = roll(n);
             die2 = roll(n);
 
-            //for (i = 1; i < rollNum + 1; i++) {
-                //System.out.println("Roll " + rollNum + ":");
-           //}
-
             System.out.println("Roll: " + rollNum++);
             System.out.println(die1);
             System.out.println(die2);
-            System.out.println();
+            blankLine();
 
-        System.out.println("Would you like to continue? yes/no");
-        scan.nextLine();
-        userInput = scan.nextLine();
+            if (die1 == 1 && die2 == 1) {
+                System.out.println("SNAKE EYES!");
+                blankLine();
+
+            } else if (die1 == 6 && die2 == 6) {
+                System.out.println("BOX CARS!");
+                blankLine();
+
+            }
+
+            System.out.println("Would you like to continue? yes/no");
+            scan.nextLine();
+            userInput = scan.nextLine();
+            blankLine();
 
         } while (userInput.equalsIgnoreCase("yes"));
-        System.out.println();
+        blankLine();
 
         System.out.println("Bye!");
 
+    }
+
+    private static void blankLine() {
+        System.out.println();
     }
 
     private static int roll(int n) {
