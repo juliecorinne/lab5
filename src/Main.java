@@ -45,7 +45,6 @@ public class Main {
             blankLine();
 
         } while (userInput.equalsIgnoreCase("yes"));
-        blankLine();
 
         System.out.println("Bye!");
 
